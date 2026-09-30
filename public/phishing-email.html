@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simulated Email — Phishing Awareness Simulation</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-mark">🛡️</span> Phishing Awareness Sim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/simulation.html">Start Simulation</a></li>
+      <li><a href="/awareness.html">Awareness Guide</a></li>
+      <li><a href="/dashboard.html">Results Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top: 24px;">
+    <span class="eyebrow">Step 2 of 3</span>
+    <h1>Your Simulated Inbox</h1>
+    <p class="subtitle">Read the message below the way you normally would, then decide how to respond.</p>
+  </section>
+
+  <div class="email-window">
+    <div class="email-toolbar">
+      <span class="email-dot red"></span>
+      <span class="email-dot amber"></span>
+      <span class="email-dot green"></span>
+    </div>
+    <div class="email-meta">
+      <div class="row"><span class="label">From:</span> IT Support &lt;support@northstar-demo.local&gt; <span class="suspicious-tag">Fictional domain</span></div>
+      <div class="row"><span class="label">To:</span> you@simulation.local</div>
+      <div class="row"><span class="label">Date:</span> Today</div>
+      <div class="email-subject">Action Required: Account Security Verification</div>
+    </div>
+    <div class="email-body">
+      <p>Hello,</p>
+      <p>As part of a routine security update, your account requires verification.</p>
+      <p>Please complete the verification process before the stated deadline, or your account access may be limited.</p>
+      <button id="verify-btn" class="email-link-btn">Verify Account</button>
+      <p>Regards,<br />Northstar IT Support</p>
+    </div>
+    <div class="email-actions">
+      <button id="report-btn" class="btn btn-secondary">🚩 Report Phishing</button>
+    </div>
+  </div>
+
+  <div id="report-result" class="card hidden mt-24" style="max-width: 640px; margin: 24px auto 0;">
+    <div class="notice success">
+      <span class="notice-icon">✅</span>
+      <div>
+        <strong>Good catch. You identified the simulated phishing attempt.</strong>
+        <p class="mb-0">Reporting suspicious emails instead of interacting with them is exactly the right response.</p>
+      </div>
+    </div>
+    <div class="btn-row mt-24">
+      <a href="/awareness.html" class="btn btn-primary">Continue to Awareness Guide</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Phishing Awareness Simulation &middot; Educational Project &middot; <span class="badge-fictional">Northstar Technologies is fictional</span>
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script>
+  recordEvent("EMAIL_VIEWED");
+
+  document.getElementById("verify-btn").addEventListener("click", async () => {
+    await recordEvent("EMAIL_CLICKED");
+    window.location.href = "/login.html";
+  });
+
+  document.getElementById("report-btn").addEventListener("click", async (e) => {
+    e.target.disabled = true;
+    await recordEvent("EMAIL_REPORTED");
+    document.getElementById("report-result").classList.remove("hidden");
+    document.getElementById("report-result").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+</body>
+</html>

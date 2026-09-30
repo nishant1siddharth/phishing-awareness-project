@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Awareness Guide — Phishing Awareness Simulation</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-mark">🛡️</span> Phishing Awareness Sim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/simulation.html">Start Simulation</a></li>
+      <li><a href="/awareness.html">Awareness Guide</a></li>
+      <li><a href="/dashboard.html">Results Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top: 24px;">
+    <span class="eyebrow">Simulation Complete</span>
+    <h1>Awareness Guide</h1>
+    <p class="subtitle">This was a controlled phishing-awareness exercise. Here's what to take away from it.</p>
+  </section>
+
+  <div class="notice success">
+    <span class="notice-icon">✅</span>
+    <div>
+      <strong>No real password was collected, transmitted, or stored.</strong>
+      <p class="mb-0">Every step of this simulation was designed so that credential values never leave your browser.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>Warning Signs You Encountered</h2>
+    <div class="card">
+      <ol class="plain-list" style="list-style: decimal; padding-left: 20px;">
+        <li style="border:none;"><strong>Unexpected credential request</strong> — you were asked to "verify" your account without initiating the request yourself.</li>
+        <li style="border:none;"><strong>Urgency</strong> — the message implied a deadline and a consequence for inaction.</li>
+        <li style="border:none;"><strong>Suspicious sender/domain</strong> — the sender address used an unfamiliar, non-official domain.</li>
+        <li style="border:none;"><strong>Generic wording</strong> — the greeting and message did not reference you personally.</li>
+        <li style="border:none;"><strong>Suspicious link</strong> — the "Verify Account" button led to an unfamiliar login page rather than a known, bookmarked site.</li>
+        <li style="border:none;"><strong>Account verification request</strong> — legitimate services rarely ask you to "verify" your account via an emailed link.</li>
+        <li style="border:none;"><strong>Emotional pressure</strong> — the framing nudged you to act quickly instead of pausing to verify.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Protect Yourself</h2>
+    <div class="card-grid">
+      <div class="card"><h3>🔍 Verify Sender Addresses</h3><p>Check the actual email address, not just the display name, before trusting a message.</p></div>
+      <div class="card"><h3>🔗 Inspect Links</h3><p>Hover over links to preview the real destination before clicking.</p></div>
+      <div class="card"><h3>🚫 Avoid Unexpected Login Links</h3><p>Never log in through a link in an email — navigate to the site yourself instead.</p></div>
+      <div class="card"><h3>⭐ Use Bookmarks</h3><p>Access important services through saved bookmarks rather than emailed links.</p></div>
+      <div class="card"><h3>🔐 Enable MFA</h3><p>Multi-factor authentication limits the damage even if a password is exposed.</p></div>
+      <div class="card"><h3>📢 Report Suspicious Emails</h3><p>Reporting phishing attempts helps protect your whole organization.</p></div>
+      <div class="card"><h3>☎️ Use Known Channels</h3><p>Contact IT or support through verified numbers or portals, not links in the suspicious message.</p></div>
+      <div class="card"><h3>⏳ Don't Let Urgency Rush You</h3><p>Pause and verify independently before acting on urgent-sounding requests.</p></div>
+    </div>
+  </section>
+
+  <div class="btn-row mt-24">
+    <a href="/dashboard.html" class="btn btn-primary">View Results Dashboard</a>
+    <a href="/index.html" class="btn btn-secondary">Back to Home</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Phishing Awareness Simulation &middot; Educational Project
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script>
+  recordEvent("AWARENESS_PAGE_VIEWED");
+</script>
+</body>
+</html>

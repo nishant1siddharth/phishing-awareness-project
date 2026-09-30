@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Northstar Account Portal (Simulation)</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-mark">🛡️</span> Phishing Awareness Sim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/simulation.html">Start Simulation</a></li>
+      <li><a href="/awareness.html">Awareness Guide</a></li>
+      <li><a href="/dashboard.html">Results Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top: 24px; padding-bottom: 12px;">
+    <span class="eyebrow">Step 3 of 3 — Simulated Page</span>
+    <h1>Simulated Login Page</h1>
+  </section>
+
+  <div class="login-shell">
+    <div class="sim-warning">⚠️ SIMULATION ONLY — DO NOT ENTER A REAL PASSWORD.</div>
+
+    <div class="login-card">
+      <div class="login-logo">🧭 Northstar Account Portal</div>
+      <p class="login-sub">Fictional company &middot; for demonstration purposes only</p>
+
+      <!-- 
+        SAFETY NOTE: This form has no backend login endpoint and its
+        onsubmit handler always prevents default submission. The password
+        field's value is read only long enough to be immediately cleared;
+        it is never included in any network request, any storage API, any
+        URL, or any log statement.
+      -->
+      <form id="sim-login-form" autocomplete="off">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-primary">Continue</button>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Phishing Awareness Simulation &middot; Educational Project &middot; No credentials are ever transmitted from this page.
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script>
+  recordEvent("LOGIN_PAGE_VIEWED");
+
+  const form = document.getElementById("sim-login-form");
+  const passwordField = document.getElementById("password");
+
+  form.addEventListener("submit", async (event) => {
+    // 1. Prevent normal form submission - nothing is ever sent from this form.
+    event.preventDefault();
+
+    // 2. Record only a generic, anonymous event. The event payload contains
+    //    no reference to the email or password field values whatsoever.
+    await recordEvent("SIMULATED_LOGIN_ATTEMPT");
+
+    // 3. Immediately clear the password input from memory/DOM.
+    passwordField.value = "";
+
+    // 4. Redirect to the educational awareness page.
+    window.location.href = "/awareness.html";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Before You Begin — Phishing Awareness Simulation</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-mark">🛡️</span> Phishing Awareness Sim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/simulation.html">Start Simulation</a></li>
+      <li><a href="/awareness.html">Awareness Guide</a></li>
+      <li><a href="/dashboard.html">Results Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top: 24px;">
+    <span class="eyebrow">Step 1 of 3</span>
+    <h1>Before You Begin</h1>
+    <p class="subtitle">Please read this information before starting the simulation.</p>
+  </section>
+
+  <div class="card" style="max-width: 680px; margin: 0 auto;">
+    <h2>What This Simulation Involves</h2>
+    <ul class="checklist">
+      <li>This is an educational simulation of a phishing email and a fake login page.</li>
+      <li>It is intended only for authorized participants as part of a cybersecurity awareness exercise.</li>
+      <li>You should never enter a real password on the simulated login page.</li>
+      <li>Only anonymous interaction events are measured — no personal information is collected.</li>
+      <li>After the simulation, you will receive a full explanation of the techniques used.</li>
+    </ul>
+
+    <div class="notice info mt-24">
+      <span class="notice-icon">ℹ️</span>
+      <div>
+        <strong>Nothing you type into the simulated login form is ever transmitted or stored.</strong>
+        <p class="mb-0">The form only records the harmless fact that a login attempt occurred.</p>
+      </div>
+    </div>
+
+    <div class="btn-row mt-24">
+      <button id="begin-btn" class="btn btn-primary">Begin Simulation</button>
+      <a href="/index.html" class="btn btn-secondary">Cancel</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Phishing Awareness Simulation &middot; Educational Project
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script>
+  document.getElementById("begin-btn").addEventListener("click", () => {
+    window.location.href = "/phishing-email.html";
+  });
+</script>
+</body>
+</html>

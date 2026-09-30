@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Results Dashboard — Phishing Awareness Simulation</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <div class="brand"><span class="brand-mark">🛡️</span> Phishing Awareness Sim</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/simulation.html">Start Simulation</a></li>
+      <li><a href="/awareness.html">Awareness Guide</a></li>
+      <li><a href="/dashboard.html">Results Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="hero" style="padding-top: 24px;">
+    <span class="eyebrow">Aggregate &amp; Anonymous</span>
+    <h1>Simulation Results</h1>
+    <p class="subtitle">These figures reflect only participants of this specific demonstration and do not represent the general population.</p>
+  </section>
+
+  <div id="stat-grid" class="stat-grid">
+    <!-- populated by dashboard.js -->
+  </div>
+
+  <div class="chart-grid">
+    <div class="card chart-card">
+      <h3>Simulation Funnel</h3>
+      <canvas id="funnel-chart" height="220"></canvas>
+    </div>
+    <div class="card chart-card">
+      <h3>User Actions</h3>
+      <canvas id="actions-chart" height="220"></canvas>
+    </div>
+  </div>
+
+  <div class="card mt-24">
+    <h3>Awareness Demo Data</h3>
+    <p>This table illustrates the type of data an attacker would capture during a real phishing campaign. <strong>All data shown here is 100% dummy/mock data</strong> generated for demonstration purposes. No real credentials or IPs are ever collected or stored.</p>
+    <div style="overflow-x: auto;">
+      <table class="data-table" id="demo-data-table" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 16px;">
+        <thead>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 194, 0.3);">
+            <th style="padding: 12px 8px;">Record ID</th>
+            <th style="padding: 12px 8px;">Attempt #</th>
+            <th style="padding: 12px 8px;">Dummy Username</th>
+            <th style="padding: 12px 8px;">Dummy Password</th>
+            <th style="padding: 12px 8px;">Simulated IP</th>
+            <th style="padding: 12px 8px;">Timestamp</th>
+            <th style="padding: 12px 8px;">Status</th>
+          </tr>
+        </thead>
+        <tbody id="demo-data-tbody">
+          <!-- Populated dynamically by dashboard.js -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card mt-24" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+    <h3>Development / Demo Feature</h3>
+    <p>Reset all simulation data stored in this local demo database. This action cannot be undone.</p>
+    <div class="btn-row">
+      <button id="reset-btn" class="btn btn-danger">Reset Simulation Data</button>
+    </div>
+    <p id="reset-status" class="mb-0" style="font-size:0.85rem;"></p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Phishing Awareness Simulation &middot; Educational Project
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

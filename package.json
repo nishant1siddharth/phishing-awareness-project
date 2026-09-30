@@ -1,0 +1,14 @@
+{
+  "name": "phishing-awareness-simulation",
+  "version": "1.0.0",
+  "description": "Authorized, controlled, educational phishing-awareness simulation demonstrating social engineering techniques and measuring anonymous awareness metrics.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
