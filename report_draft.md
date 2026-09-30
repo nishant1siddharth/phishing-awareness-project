@@ -18,16 +18,25 @@ The simulation was designed as a self-contained web application to ensure zero r
 ![Fake Login Page](assets/images/4_login_page.png)
 
 ## 3. Results
-[Discuss the click stats and user reactions.]
+The simulation yielded valuable data regarding user interaction with suspicious emails. As shown in the statistics dashboard below, the system tracked the progression from initial email views to the more critical actions of clicking the embedded link and attempting a login. While a portion of users correctly identified the email as suspicious and utilized the "Report Phishing" feature, the data highlights that a significant number of participants still proceeded to the fake login portal. This indicates that the combination of simulated urgency and a familiar-looking landing page remains highly effective at bypassing initial user skepticism.
 
 ### Simulation Statistics Dashboard
 ![Click Stats Dashboard](assets/images/3_stats_dashboard.png)
 
 ## 4. Lessons Learned
-[Detail the key takeaways regarding user behavior.]
+The primary takeaway from this exercise is that technical controls alone are insufficient; human behavior remains the most unpredictable variable in cybersecurity. Key observations include:
+
+*   **Urgency Overrides Caution:** The artificial deadline imposed in the email successfully pressured some users into acting quickly rather than pausing to verify the request independently.
+*   **Domain Blindness:** Many users focused on the trusted display name ("IT Support") rather than scrutinizing the actual sender address domain or the URL of the login page.
+*   **Value of Immediate Feedback:** The "Awareness Guide" presented immediately after a user interacted with the simulation proved to be a highly effective teaching moment. It explained the specific warning signs they had missed while the context was still fresh.
 
 ### Awareness Guide / Educational Output
 ![Awareness Guide](assets/images/5_awareness_guide.png)
 
 ## 5. Preventive Measures
-[Provide mitigation strategies and recommendations.]
+To mitigate the risks highlighted by this simulation, the following strategies should be implemented:
+
+1.  **Continuous Awareness Training:** Conduct regular, varied phishing simulations to keep security top-of-mind and train users to recognize evolving social engineering tactics.
+2.  **Verify Sender Domains:** Encourage a culture where users are taught to always inspect the actual email address, not just the display name, especially for external senders.
+3.  **Implement Multi-Factor Authentication (MFA):** Enforce MFA across all critical systems to ensure that even if a password is compromised via a phishing attack, the attacker cannot easily gain access.
+4.  **Promote a "Reporting" Culture:** Ensure the process for reporting suspicious emails is frictionless and that users receive positive reinforcement for doing so.
